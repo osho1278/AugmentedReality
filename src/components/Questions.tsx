@@ -35,24 +35,25 @@ export default class Questions extends Component<Props, State> {
     };
     renderText = () => {
         return (
-            <ViroFlexView
-                //rotation={[-90, 0, 0]}
-                height={0.03}
-                width={0.05}
-                style={styles.card}
-            >
-                <ViroFlexView
-                    style={styles.cardWrapper}
-                >
+            // <ViroFlexView
+            //     //rotation={[-90, 0, 0]}
+            //     height={0.03}
+            //     width={0.1}
+            //     style={styles.card}
+            // >
+            //     <ViroFlexView
+            //         style={styles.cardWrapper}
+            //     >
                     <ViroText
                         textClipMode="None"
                         text={this.state.text}
-                        //rotation={[-90, 0, 0]}
+                        // rotation={[-90, 0, 0]}
+                        position={[0,-0.01,0]}
                         scale={[.015, .015, .015]}
-                        style={styles.textStyle}
+                        style={{...styles.textStyle,width:3,color:'orange'}}
                     />
-                </ViroFlexView>
-            </ViroFlexView>
+            //     </ViroFlexView>
+            // </ViroFlexView>
         )
     }
 
@@ -64,32 +65,31 @@ export default class Questions extends Component<Props, State> {
 
                 <ViroARImageMarker target={"q1"}
                     onAnchorFound={() => { this.showToast("Anchor Found ") 
-                    this.setState({ text: 'Who invented C#' })
+                    this.setState({ text: 'Who invented light bulb ?' })
                     }}>
                 </ViroARImageMarker>
 
                 <ViroARImageMarker target={"q2"}
                     onAnchorFound={() => { this.showToast("Anchor Found ") 
-                     this.setState({ text: 'Who invented b#' })
+                     this.setState({ text: 'Interface Manager is the original name of which OS ? ' })
                     }}>
                 </ViroARImageMarker>
 
                 <ViroARImageMarker target={"q3"}
                     onAnchorFound={() => { this.showToast("Anchor Found ") 
-                    this.setState({ text: 'Who invented d#' })
+                    this.setState({ text: 'Windows XP was released on October 25, 2001 to great fanfare. The original slogan was discarded, and a new one chosen. Why?' })
                     }}>
                 </ViroARImageMarker>
 
                 <ViroARImageMarker target={"q4"}
                     onAnchorFound={() => { this.showToast("Anchor Found ") 
-                    this.setState({ text: 'Who invented e#' })
+                    this.setState({ text: 'Who other than Bill Gates is the founder of Microsoft ?' })
                     }}>
                 </ViroARImageMarker>
 
                 <ViroARImageMarker target={"q5"}
                     onAnchorFound={() => { this.showToast("Who is this famous sports personality ? ") 
                     }}>
-
                     <ViroNode key="card">
                         <ViroFlexView
                             style={styles.cardWrapper}
@@ -108,7 +108,8 @@ export default class Questions extends Component<Props, State> {
                 <ViroARImageMarker target={"flower"}
                     onAnchorFound={() => { this.showToast("Guess the movie ") }}>
                     <ViroVideo position={[0, 0 - .02, 0]} rotation={[-90, 0, 0]} loop={true} height={.02} width={.02}
-                        source={require('https://drive.google.com/file/d/1ic10GzK-V9IFrVH62gnjFBuZynaOgGeO/view?usp=sharing')}/>
+                        source={{uri:'flower'}}
+                        />
                 </ViroARImageMarker>
             </ViroNode>
 

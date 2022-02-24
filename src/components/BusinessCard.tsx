@@ -139,7 +139,7 @@ export default class BusinessCard extends Component {
                 position={[0, 0.02, 0.03]}
                 style={{ ...styles.textStyle, width: 20, textAlign: 'center', color: 'yellow' }}
               />
-              <ViroText text="Venkatesh Bhupati"
+              <ViroText text="Venkatesh Bhupathi"
                 rotation={[-90, 0, 0]}
                 scale={[.01, .01, .01]}
                 position={[0, 0.02, 0.04]}
@@ -161,7 +161,7 @@ export default class BusinessCard extends Component {
   }
 
   _onInitialized = (state: any, reason: any) => {
-    this.showToast("Scan the V-Team logo")
+    this.showToast("Scan the L&D logo !")
     if (state == ViroConstants.TRACKING_NORMAL) {
       isTracking: true
     } else if (state == ViroConstants.TRACKING_NONE) {
